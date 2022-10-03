@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: dep-kaecses-uat-1
+    labels:
+        app: srvkaecsesuat1
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: srvkaecsesuat1
+    template: 
+        metadata:
+            labels:
+                app: srvkaecsesuat1
+        spec:
+            containers:
+            - name: k8s-demo
+              image: crkaecsespreprod1.azurecr.us/rep-kaecses-uat-1:latest
+              ports:
+              - containerPort: 80
+            imagePullSecrets:
+            - name: regpreprod
+---            
+apiVersion: v1
+kind: Service
+metadata:
+    name: srvkaecsesuat1
+    annotations: 
+      service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+      service.beta.kubernetes.io/azure-dns-label-name: srvkaecsesuat1
+    labels:
+        app: srvkaecsesuat1
+spec:
+    ports:
+        - name: http-port
+          port: 80
+          targetPort: 80
+    selector: 
+        app: srvkaecsesuat1
+    type: LoadBalancer
+

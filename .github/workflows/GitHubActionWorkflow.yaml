@@ -28,14 +28,14 @@
 # name: Build and deploy an app to AKS
 # on: repository_dispatch
 
-# on:
-#  push:
-#    branches:
-#      - main
-#  workflow_dispatch:
-
 name: Build and deploy an app to AKS
-on: repository_dispatch
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  
 env:
   AZURE_CONTAINER_REGISTRY: "acrgithubaction"
   CONTAINER_NAME: "dcfcss"

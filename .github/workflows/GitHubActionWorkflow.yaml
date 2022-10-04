@@ -54,6 +54,9 @@ jobs:
     - name: Test6
       run: |
         git clone https://github.com/deepansahayajerin/kansasdcf-gen-code.git        
+        git pull https://github.com/deepansahayajerin/kansasdcf-gen-code.git 
         git clone https://github.com/deepansahayajerin/bphx.cool.angular.git              
+        git pull https://github.com/deepansahayajerin/bphx.cool.angular.git    
         git clone https://github.com/deepansahayajerin/Bphx.Cool.Net.git         
+        git pull https://github.com/deepansahayajerin/Bphx.Cool.Net.git  
         ls

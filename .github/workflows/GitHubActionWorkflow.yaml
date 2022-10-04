@@ -48,6 +48,7 @@ env:
   REPO_FRMAEWORKS_CODE : "https://github.com/deepansahayajerin/kansasdcf-frameworks-code.git"  
   REPO_GEN_CODE : "https://github.com/deepansahayajerin/kansasdcf-gen-code.git"
   REPO_MANIFEST : "https://github.com/deepansahayajerin/Manifest.git"  
+  AS : "ls"
 
 jobs:
   buildImage:
@@ -68,6 +69,7 @@ jobs:
     # Builds and pushes an image up to your Azure Container Registry
     - name: Build and push image to ACR
       run: |
+        {{ AS }}
         git clone {{ REPO_MANIFEST }}     
         cd Manifest
         git clone {{ REPO_BPHX_COOL_ANGULAR }}                

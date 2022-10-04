@@ -87,6 +87,6 @@ jobs:
     name: Test
     defaults:
       run:
-        working-directory: home/runner/work/Manifest/Manifest/KansasProject/Manifest
+        working-directory: /KansasProject/Manifest
     steps:
       - run: echo test

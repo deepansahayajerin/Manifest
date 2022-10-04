@@ -53,44 +53,11 @@ jobs:
         run:
           working-directory: /home/runner/work/Manifest/Manifest
     steps:
-    # Checks out multiple repositories 
-    - name: Checkout1 bphx.cool.angular
-      uses: actions/checkout@v3
-      with:
-          repository: deepansahayajerin/bphx.cool.angular
-    - name: Test1
-      run: ls            
-    - name: Checkout2 Bphx.Cool.Net
-      uses: actions/checkout@v3
-      with:
-          repository: deepansahayajerin/Bphx.Cool.Net  
-    - name: Test2
-      run: ls              
-    - name: Checkout3 cool-gen-kansasdcf
-      uses: actions/checkout@v3
-      with:
-          repository: deepansahayajerin/cool-gen-kansasdcf   
-    - name: Test3
-      run: ls              
-    - name: Checkout4 kansasdcf-frameworks-code
-      uses: actions/checkout@v3
-      with:
-          repository: deepansahayajerin/kansasdcf-frameworks-code 
-    - name: Test4
-      run: ls              
-    - name: Checkout5 kansasdcf-gen-code
-      uses: actions/checkout@v3
-      with:
-          repository: deepansahayajerin/kansasdcf-gen-code
-    - name: Test5
-      run: ls              
-    - name: Checkout6 Manifest
-      uses: actions/checkout@v3
-      with:
-          repository: deepansahayajerin/Manifest  
+    # Checks out multiple repositories    
     - name: Test6
       run: |
-        git pull https://github.com/deepansahayajerin/cool-gen-kansasdcf   
-        git pull https://github.com/deepansahayajerin/bphx.cool.angular
+        git config pull.rebase false
+        git pull https://github.com/deepansahayajerin/cool-gen-kansasdcf              
+        git pull https://github.com/deepansahayajerin/bphx.cool.angular        
         git pull https://github.com/deepansahayajerin/Bphx.Cool.Net 
         ls

@@ -53,10 +53,7 @@ jobs:
     # Checks out multiple repositories    
     - name: Test6
       run: |
-        git clone https://github.com/deepansahayajerin/kansasdcf-gen-code.git        
-        git fetch https://github.com/deepansahayajerin/kansasdcf-gen-code.git 
-        git clone https://github.com/deepansahayajerin/bphx.cool.angular.git              
-        git fetch https://github.com/deepansahayajerin/bphx.cool.angular.git    
-        git clone https://github.com/deepansahayajerin/Bphx.Cool.Net.git         
-        git fetch https://github.com/deepansahayajerin/Bphx.Cool.Net.git  
+        git clone https://github.com/deepansahayajerin/kansasdcf-gen-code.git                
+        git clone https://github.com/deepansahayajerin/bphx.cool.angular.git                      
+        git clone https://github.com/deepansahayajerin/Bphx.Cool.Net.git                 
         ls

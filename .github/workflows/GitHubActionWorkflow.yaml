@@ -83,9 +83,5 @@ jobs:
           path: KansasProject/Manifest          
     
     - run: ls
-    - run: cd ..
-    - run: ls
-    - run: cd ..
-    - run: ls
-    - run: cd ..
+    - run: cd Manifest
     - run: ls

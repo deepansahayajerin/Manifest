@@ -42,6 +42,12 @@ env:
   CLUSTER_NAME: "aksclstrgithubaction"
   IMAGE_PULL_SECRET_NAME: "githubactionsecret"
   DEPLOYMENT_MANIFEST_PATH: "Deployment.yaml"
+  REPO_BPHX_COOL_ANGULAR : git clone https://github.com/deepansahayajerin/bphx.cool.angular.git"
+  REPO_BPHX_COOL_NET : https://github.com/deepansahayajerin/Bphx.Cool.Net.git"                      
+  REPO_COOL_GEN : https://github.com/deepansahayajerin/cool-gen-kansasdcf.git"      
+  REPO_FRMAEWORKS_CODE : https://github.com/deepansahayajerin/kansasdcf-frameworks-code.git"  
+  REPO_GEN_CODE : https://github.com/deepansahayajerin/kansasdcf-gen-code.git"
+  REPO_MANIFEST : "https://github.com/deepansahayajerin/Manifest.git"  
 
 jobs:
   buildImage:
@@ -62,13 +68,13 @@ jobs:
     # Builds and pushes an image up to your Azure Container Registry
     - name: Build and push image to ACR
       run: |
-        git clone https://github.com/deepansahayajerin/Manifest.git       
+        git clone {{ REPO_MANIFEST }}     
         cd Manifest
-        git clone https://github.com/deepansahayajerin/bphx.cool.angular.git                
-        git clone https://github.com/deepansahayajerin/Bphx.Cool.Net.git                      
-        git clone https://github.com/deepansahayajerin/cool-gen-kansasdcf.git      
-        git clone https://github.com/deepansahayajerin/kansasdcf-frameworks-code.git  
-        git clone https://github.com/deepansahayajerin/kansasdcf-gen-code.git          
+        git clone {{ REPO_BPHX_COOL_ANGULAR }}                
+        git clone {{ REPO_BPHX_COOL_NET }}                      
+        git clone {{ REPO_COOL_GEN }}   
+        git clone {{ REPO_FRMAEWORKS_CODE }}  
+        git clone {{ REPO_GEN_CODE }}          
         ls
         # az acr build --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} .
   createSecret:

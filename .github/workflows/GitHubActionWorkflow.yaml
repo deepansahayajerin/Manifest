@@ -70,7 +70,7 @@ jobs:
         git clone https://github.com/deepansahayajerin/kansasdcf-frameworks-code.git  
         git clone https://github.com/deepansahayajerin/kansasdcf-gen-code.git  
         ls
-        # az acr build --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} .
+        az acr build --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} .
   createSecret:
     permissions:
       contents: read
@@ -139,7 +139,7 @@ jobs:
         resource-group: ${{ env.RESOURCE_GROUP }}
         cluster-name: ${{ env.CLUSTER_NAME }}
         
-    - name: Checks out the manifest repository
+    - name: List manifest repository
       run: ls                        
           
     # Deploys application based on given manifest file

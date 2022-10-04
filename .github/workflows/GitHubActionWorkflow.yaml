@@ -81,7 +81,9 @@ jobs:
       with:
           repository: deepansahayajerin/Manifest
           path: KansasProject/Manifest          
-          
+    
+    - run: ls
+    
     # Logs in with your Azure credentials
     - name: Azure login
       uses: azure/login@v1.4.3

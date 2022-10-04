@@ -41,7 +41,7 @@ env:
   RESOURCE_GROUP: "rgGithubActionDeploy"
   CLUSTER_NAME: "aksclstrgithubaction"
   IMAGE_PULL_SECRET_NAME: "githubactionsecret"
-  DEPLOYMENT_MANIFEST_PATH: "Manifest/deployment.yaml"
+  DEPLOYMENT_MANIFEST_PATH: "Deployment.yaml"
 
 jobs:
   buildImage:
@@ -122,10 +122,7 @@ jobs:
     needs: [buildImage, createSecret]
     steps:
     # Checks out the repository this file is in
-    # - uses: actions/checkout@v3
-    #  with:
-    #      repository: deepansahayajerin/Manifest
-    #      path: Manifest
+    - uses: actions/checkout@v3
           
     # Logs in with your Azure credentials
     - name: Azure login
@@ -143,9 +140,7 @@ jobs:
         cluster-name: ${{ env.CLUSTER_NAME }}
         
     - name: Checks out the manifest repository
-      run: |
-          ls
-          git clone https://github.com/deepansahayajerin/Manifest.git                 
+      run: ls                        
           
     # Deploys application based on given manifest file
     - name: Deploys application

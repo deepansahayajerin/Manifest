@@ -41,37 +41,10 @@ env:
   RESOURCE_GROUP: "rgGithubActionDeploy"
   CLUSTER_NAME: "aksclstrgithubaction"
   IMAGE_PULL_SECRET_NAME: "githubactionsecret"
-  DEPLOYMENT_MANIFEST_PATH: "manifests/deployment.yaml"
+  DEPLOYMENT_MANIFEST_PATH: "deployment.yaml"
 
 jobs:
-  buildImage:
-    permissions:
-      contents: read
-      id-token: write
-    runs-on: ubuntu-latest
-    steps:            
-    # Logs in with your Azure credentials
-    - name: Azure login
-      uses: azure/login@v1.4.3
-      with:
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-    
-    # Checks out multiple repositories    
-    # Builds and pushes an image up to your Azure Container Registry
-    - name: Build and push image to ACR
-      run: |
-        git clone https://github.com/deepansahayajerin/Manifest.git       
-        cd Manifest
-        git clone https://github.com/deepansahayajerin/bphx.cool.angular.git                
-        git clone https://github.com/deepansahayajerin/Bphx.Cool.Net.git                      
-        git clone https://github.com/deepansahayajerin/cool-gen-kansasdcf.git      
-        git clone https://github.com/deepansahayajerin/kansasdcf-frameworks-code.git  
-        git clone https://github.com/deepansahayajerin/kansasdcf-gen-code.git          
-        ls
-        az acr build --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} .
-  createSecret:
+   createSecret:
     permissions:
       contents: read
       id-token: write

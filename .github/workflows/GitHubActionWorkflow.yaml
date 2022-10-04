@@ -87,6 +87,6 @@ jobs:
     name: Test
     defaults:
       run:
-        working-directory: /home/runner/work
+        working-directory: /home/runner/work/Manifest/Manifest
     steps:
       - run: ls

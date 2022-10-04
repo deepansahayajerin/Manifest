@@ -122,10 +122,10 @@ jobs:
     needs: [buildImage, createSecret]
     steps:
     # Checks out the repository this file is in
-    - uses: actions/checkout@v3
-      with:
-          repository: deepansahayajerin/Manifest
-          path: Manifest
+    # - uses: actions/checkout@v3
+    #  with:
+    #      repository: deepansahayajerin/Manifest
+    #      path: Manifest
           
     # Logs in with your Azure credentials
     - name: Azure login
@@ -142,11 +142,10 @@ jobs:
         resource-group: ${{ env.RESOURCE_GROUP }}
         cluster-name: ${{ env.CLUSTER_NAME }}
         
-    # - name: Checks out the manifest repository
-    #  run: |
-    #      ls
-    #      git clone https://github.com/deepansahayajerin/Manifest.git       
-    #      cd Manifest
+    - name: Checks out the manifest repository
+      run: |
+          ls
+          git clone https://github.com/deepansahayajerin/Manifest.git                 
           
     # Deploys application based on given manifest file
     - name: Deploys application

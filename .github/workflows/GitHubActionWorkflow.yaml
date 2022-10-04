@@ -53,7 +53,8 @@ jobs:
     # Checks out multiple repositories    
     - name: Test6
       run: |
-        git clone https://github.com/deepansahayajerin/Manifest.git          
+        git clone https://github.com/deepansahayajerin/Manifest.git       
+        cd Manifest
         git clone https://github.com/deepansahayajerin/bphx.cool.angular.git                
         git clone https://github.com/deepansahayajerin/Bphx.Cool.Net.git                      
         git clone https://github.com/deepansahayajerin/cool-gen-kansasdcf.git      

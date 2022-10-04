@@ -53,8 +53,7 @@ jobs:
     # Checks out multiple repositories    
     - name: Test6
       run: |
-        git pull https://github.com/deepansahayajerin/cool-gen-kansasdcf 
-        git config pull.rebase false                     
-        git pull https://github.com/deepansahayajerin/bphx.cool.angular        
-        git pull https://github.com/deepansahayajerin/Bphx.Cool.Net 
+        git clone https://github.com/deepansahayajerin/kansasdcf-gen-code.git        
+        git clone https://github.com/deepansahayajerin/bphx.cool.angular.git              
+        git clone https://github.com/deepansahayajerin/Bphx.Cool.Net.git         
         ls

@@ -49,6 +49,9 @@ jobs:
       contents: read
       id-token: write
     runs-on: ubuntu-latest
+    defaults:
+        run:
+          working-directory: /home/runner/work/Manifest/Manifest
     steps:
     # Checks out multiple repositories 
     - name: Checkout1 bphx.cool.angular
@@ -81,12 +84,5 @@ jobs:
       with:
           repository: deepansahayajerin/Manifest
           path: KansasProject/Manifest     
-          
-  test-working-directory:
-    runs-on: ubuntu-latest
-    name: Test
-    defaults:
-      run:
-        working-directory: /home/runner/work/Manifest/Manifest
-    steps:
-      - run: ls
+    - name: Test
+      run: ls    

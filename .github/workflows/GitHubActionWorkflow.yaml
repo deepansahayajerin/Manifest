@@ -55,27 +55,27 @@ jobs:
       uses: actions/checkout@v3
       with:
           repository: deepansahayajerin/bphx.cool.angular
-          path: KansasProject/Manifest
+          path: KansasProject/Manifest/bphx.cool.angular
     - name: Checkout2 Bphx.Cool.Net
       uses: actions/checkout@v3
       with:
           repository: deepansahayajerin/Bphx.Cool.Net   
-          path: KansasProject/Manifest
+          path: KansasProject/Manifest/Bphx.Cool.Net 
     - name: Checkout3 cool-gen-kansasdcf
       uses: actions/checkout@v3
       with:
           repository: deepansahayajerin/cool-gen-kansasdcf   
-          path: KansasProject/Manifest
+          path: KansasProject/Manifest/cool-gen-kansasdcf
     - name: Checkout4 kansasdcf-frameworks-code
       uses: actions/checkout@v3
       with:
           repository: deepansahayajerin/kansasdcf-frameworks-code 
-          path: KansasProject/Manifest
+          path: KansasProject/Manifest/kansasdcf-frameworks-code 
     - name: Checkout5 kansasdcf-gen-code
       uses: actions/checkout@v3
       with:
           repository: deepansahayajerin/kansasdcf-gen-code
-          path: KansasProject/Manifest
+          path: KansasProject/Manifest/kansasdcf-gen-code
     - name: Checkout6 Manifest
       uses: actions/checkout@v3
       with:

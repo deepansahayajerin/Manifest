@@ -138,7 +138,10 @@ jobs:
       with:
         resource-group: ${{ env.RESOURCE_GROUP }}
         cluster-name: ${{ env.CLUSTER_NAME }}
-
+        
+    - name: Build and push image to ACR
+      run: ls
+      
     # Deploys application based on given manifest file
     - name: Deploys application
       uses: Azure/k8s-deploy@v3.1

@@ -29,7 +29,6 @@
 # on: repository_dispatch
 
 name: Build and deploy an app to AKS
-
 on:
   push:
     branches:
@@ -55,33 +54,14 @@ jobs:
     - name: Checkout1 bphx.cool.angular
       uses: actions/checkout@v3
       with:
-          repository: deepansahayajerin/bphx.cool.angular
-          path: KansasProject/Manifest
-    - name: Checkout2 Bphx.Cool.Net
-      uses: actions/checkout@v3
-      with:
-          repository: deepansahayajerin/Bphx.Cool.Net   
-          path: KansasProject/Manifest
-    - name: Checkout3 cool-gen-kansasdcf
-      uses: actions/checkout@v3
-      with:
-          repository: deepansahayajerin/cool-gen-kansasdcf   
-          path: KansasProject/Manifest
-    - name: Checkout4 kansasdcf-frameworks-code
-      uses: actions/checkout@v3
-      with:
-          repository: deepansahayajerin/kansasdcf-frameworks-code 
-          path: KansasProject/Manifest
-    - name: Checkout5 kansasdcf-gen-code
-      uses: actions/checkout@v3
-      with:
-          repository: deepansahayajerin/kansasdcf-gen-code
-          path: KansasProject/Manifest
-    - name: Checkout6 Manifest
-      uses: actions/checkout@v3
-      with:
-          repository: deepansahayajerin/Manifest
-          path: KansasProject/Manifest
+          repository: |
+            deepansahayajerin/bphx.cool.angular
+            deepansahayajerin/Bphx.Cool.Net 
+            deepansahayajerin/cool-gen-kansasdcf
+            deepansahayajerin/kansasdcf-frameworks-code 
+            deepansahayajerin/kansasdcf-gen-code
+            deepansahayajerin/Manifest
+          path: ./KansasProject/Manifest
           
     # Logs in with your Azure credentials
     - name: Azure login
@@ -94,7 +74,7 @@ jobs:
     # Builds and pushes an image up to your Azure Container Registry
     - name: Build and push image to ACR
       run: |
-        az acr build --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} ./KansasProject/Manifest --debug
+        az acr build --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} ./KansasProject/Manifest
   createSecret:
     permissions:
       contents: read

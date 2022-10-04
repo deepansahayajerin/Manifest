@@ -58,25 +58,35 @@ jobs:
       uses: actions/checkout@v3
       with:
           repository: deepansahayajerin/bphx.cool.angular
+    - name: Test1
+      run: ls            
     - name: Checkout2 Bphx.Cool.Net
       uses: actions/checkout@v3
       with:
-          repository: deepansahayajerin/Bphx.Cool.Net   
+          repository: deepansahayajerin/Bphx.Cool.Net  
+    - name: Test2
+      run: ls              
     - name: Checkout3 cool-gen-kansasdcf
       uses: actions/checkout@v3
       with:
           repository: deepansahayajerin/cool-gen-kansasdcf   
+    - name: Test3
+      run: ls              
     - name: Checkout4 kansasdcf-frameworks-code
       uses: actions/checkout@v3
       with:
           repository: deepansahayajerin/kansasdcf-frameworks-code 
+    - name: Test4
+      run: ls              
     - name: Checkout5 kansasdcf-gen-code
       uses: actions/checkout@v3
       with:
           repository: deepansahayajerin/kansasdcf-gen-code
+    - name: Test5
+      run: ls              
     - name: Checkout6 Manifest
       uses: actions/checkout@v3
       with:
           repository: deepansahayajerin/Manifest  
-    - name: Test
+    - name: Test6
       run: ls    

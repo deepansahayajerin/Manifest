@@ -41,7 +41,7 @@ env:
   RESOURCE_GROUP: "rgGithubActionDeploy"
   CLUSTER_NAME: "aksclstrgithubaction"
   IMAGE_PULL_SECRET_NAME: "githubactionsecret"
-  DEPLOYMENT_MANIFEST_PATH: "deployment.yaml"
+  DEPLOYMENT_MANIFEST_PATH: "Manifest/deployment.yaml"
 
 jobs:
   buildImage:
@@ -123,7 +123,10 @@ jobs:
     steps:
     # Checks out the repository this file is in
     - uses: actions/checkout@v3
-
+      with:
+          repository: deepansahayajerin/Manifest
+          path: Manifest
+          
     # Logs in with your Azure credentials
     - name: Azure login
       uses: azure/login@v1.4.3
@@ -139,9 +142,12 @@ jobs:
         resource-group: ${{ env.RESOURCE_GROUP }}
         cluster-name: ${{ env.CLUSTER_NAME }}
         
-    - name: Build and push image to ACR
-      run: ls
-      
+    # - name: Checks out the manifest repository
+    #  run: |
+    #      ls
+    #      git clone https://github.com/deepansahayajerin/Manifest.git       
+    #      cd Manifest
+          
     # Deploys application based on given manifest file
     - name: Deploys application
       uses: Azure/k8s-deploy@v3.1

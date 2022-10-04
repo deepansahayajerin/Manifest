@@ -80,6 +80,13 @@ jobs:
       uses: actions/checkout@v3
       with:
           repository: deepansahayajerin/Manifest
-          path: KansasProject/Manifest                                  
-    - run: cd\    
-    - run: ls
+          path: KansasProject/Manifest     
+          
+  test-working-directory:
+    runs-on: ubuntu-latest
+    name: Test
+    defaults:
+      run:
+        working-directory: home/runner/work/Manifest/Manifest/KansasProject/Manifest
+    steps:
+      - run: echo test

@@ -49,15 +49,12 @@ jobs:
       contents: read
       id-token: write
     runs-on: ubuntu-latest
-    defaults:
-        run:
-          working-directory: /home/runner/work/Manifest/Manifest
     steps:
     # Checks out multiple repositories    
     - name: Test6
       run: |
-        git config pull.rebase false
-        git pull https://github.com/deepansahayajerin/cool-gen-kansasdcf              
+        git pull https://github.com/deepansahayajerin/cool-gen-kansasdcf 
+        git config pull.rebase false                     
         git pull https://github.com/deepansahayajerin/bphx.cool.angular        
         git pull https://github.com/deepansahayajerin/Bphx.Cool.Net 
         ls

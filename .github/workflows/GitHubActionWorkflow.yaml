@@ -42,11 +42,11 @@ env:
   CLUSTER_NAME: "aksclstrgithubaction"
   IMAGE_PULL_SECRET_NAME: "githubactionsecret"
   DEPLOYMENT_MANIFEST_PATH: "Deployment.yaml"
-  REPO_BPHX_COOL_ANGULAR : git clone https://github.com/deepansahayajerin/bphx.cool.angular.git"
-  REPO_BPHX_COOL_NET : https://github.com/deepansahayajerin/Bphx.Cool.Net.git"                      
-  REPO_COOL_GEN : https://github.com/deepansahayajerin/cool-gen-kansasdcf.git"      
-  REPO_FRMAEWORKS_CODE : https://github.com/deepansahayajerin/kansasdcf-frameworks-code.git"  
-  REPO_GEN_CODE : https://github.com/deepansahayajerin/kansasdcf-gen-code.git"
+  REPO_BPHX_COOL_ANGULAR : "https://github.com/deepansahayajerin/bphx.cool.angular.git"
+  REPO_BPHX_COOL_NET : "https://github.com/deepansahayajerin/Bphx.Cool.Net.git"                      
+  REPO_COOL_GEN : "https://github.com/deepansahayajerin/cool-gen-kansasdcf.git"      
+  REPO_FRMAEWORKS_CODE : "https://github.com/deepansahayajerin/kansasdcf-frameworks-code.git"  
+  REPO_GEN_CODE : "https://github.com/deepansahayajerin/kansasdcf-gen-code.git"
   REPO_MANIFEST : "https://github.com/deepansahayajerin/Manifest.git"  
 
 jobs:

@@ -89,4 +89,8 @@ jobs:
       with:
           repository: deepansahayajerin/Manifest  
     - name: Test6
-      run: ls    
+      run: |
+        git pull https://github.com/deepansahayajerin/cool-gen-kansasdcf   
+        git pull https://github.com/deepansahayajerin/bphx.cool.angular
+        git pull https://github.com/deepansahayajerin/Bphx.Cool.Net 
+        ls

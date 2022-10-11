@@ -48,7 +48,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:            
     # Logs in with your Azure credentials
     - name: Azure login

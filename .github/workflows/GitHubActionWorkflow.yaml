@@ -62,6 +62,7 @@ jobs:
     # Builds and pushes an image up to your Azure Container Registry
     - name: Build and push image to ACR
       run: |
+        rm -rf -v Manifest
         git clone https://github.com/deepansahayajerin/Manifest.git               
         cd Manifest
         git clone https://github.com/deepansahayajerin/bphx.cool.angular.git                
